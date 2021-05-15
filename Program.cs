@@ -6,7 +6,7 @@ namespace therecipeapp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+          Controller.CookBook cookBook = new Controller.CookBook();
         }
     }
 }
