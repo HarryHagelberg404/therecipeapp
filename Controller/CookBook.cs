@@ -7,6 +7,7 @@ namespace Controller
     class CookBook
     {
         View.Recipes v_recipes = new View.Recipes();
+        View.Ingredients v_ingredients = new View.Ingredients();
         
       
         public CookBook() 
@@ -18,7 +19,8 @@ namespace Controller
           Console.Clear();
           Console.WriteLine("Welcome to your digital Cookbook");
           Console.WriteLine("Press 1 to view your recipes");
-          Console.WriteLine("Press 2 to add a recipe");
+          Console.WriteLine("Press 2 to add ingredients");
+          Console.WriteLine("Press 3 to add recipe");
            if (v_recipes.UserMessage != null)
             {
                 Console.WriteLine(v_recipes.UserMessage );
@@ -35,11 +37,15 @@ namespace Controller
                 }
                 else if (userChoice == 2)
                 {
-                    v_recipes.IngredientsMenu();
+                    v_ingredients.IngredientsMenu();
+                } 
+                else if (userChoice == 3)
+                {
+                    v_recipes.RecipesMenu();
                 }
                 else
                 {
-                    v_recipes.UserMessage  = "Please enter the number 1 or 2.";
+                    v_recipes.UserMessage  = "Please enter the number 1,2 or 3.";
                      CookBookMenu();
                 }
             }
