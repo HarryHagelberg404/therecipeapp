@@ -5,16 +5,39 @@ using System.Collections.Generic;
 namespace Model
 {
     class Recipes
-    {
-        public string recipeName {get; set;}
+    {  
+        private string _recipeName;
 
-        public int recipePortions {get; set;}
+        private int _recipePortions;
 
-        public string recipeIngredient {get; set;}
+        private string _recipeIngredients;
 
-        public int recipeIngredientAmount {get; set;}
+        private int _recipeIngredientsAmount;
 
-        public string recipeComment {get; set;}
+        private string _recipeComment;
+        public string RecipeName {
+        get {return _recipeName;} 
+        set {_recipeName = value;}
+        }
+
+        public int RecipePortions {
+        get {return _recipePortions;} 
+        set {_recipePortions = value;}
+        }
+
+        public string RecipeIngredient {
+        get {return _recipeIngredients;} 
+        set {_recipeIngredients = value;}
+        }
+
+        public int RecipeIngredientAmount {
+        get {return _recipeIngredientsAmount;} 
+        set {_recipeIngredientsAmount = value;}}
+
+        public string RecipeComment {
+        get {return _recipeComment;} 
+        set {_recipeComment = value;}
+        }
     }
 }
 
