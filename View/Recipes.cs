@@ -6,6 +6,9 @@ namespace View
 {
     class Recipes
     {
+        Model.Recipes m_recipes = new Model.Recipes();
+
+        Controller.CookBook c_cookbook;
         private string _userMessage;
 
         public string UserMessage
@@ -24,13 +27,6 @@ namespace View
           public string getUserChoice()
         {
             return Console.ReadLine();
-        }
-
-        public void TempRecipes() {
-        Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-        Console.WriteLine("Pancakes; 20, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-        Console.WriteLine("Meatballs; 40, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-
         }
 
         public void RecipesMenu() {
@@ -52,12 +48,12 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    Console.WriteLine("Implement back to menu");
+                   c_cookbook.CookBookMenu();
                 }
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                     RecipesMenu();
+                    RecipesMenu();
                 }
             }
             catch (Exception)
@@ -83,7 +79,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    Console.WriteLine("Implement back to menu Recipe Menu");
+                   c_cookbook.CookBookMenu();
                 }
      
         }
@@ -92,12 +88,14 @@ namespace View
         Console.Clear();
         Console.WriteLine("Add recipe name");
         string recipeName = getUserChoice();
+        m_recipes.RecipeName = recipeName;
         }
 
         private void AddRecipePortions() {
         Console.Clear();
         Console.WriteLine("Add recipe portions");
         int recipePortions = Int16.Parse(getUserChoice());
+        m_recipes.RecipePortions = recipePortions;
         }
 
         // TODO Choose ingredients from DB, and amount of ingredients
@@ -105,8 +103,10 @@ namespace View
         Console.Clear();
         Console.WriteLine("Add ingredient");
         string addIngredient = getUserChoice();
+        m_recipes.RecipeIngredient = addIngredient;
         // TODO Change amountOfIngredients
         int amountOfIngredients = addIngredient.Length;
+        m_recipes.RecipeIngredientAmount = amountOfIngredients;
         Console.WriteLine("Amount" + amountOfIngredients);
         AddComments(addIngredient);
         }
@@ -115,6 +115,7 @@ namespace View
         Console.Clear();
         Console.WriteLine("Add comment for " + ingredient);
         string addComment = getUserChoice();
+        m_recipes.RecipeComment = addComment;
         }
 
        

@@ -6,6 +6,9 @@ namespace View
 {
     class Ingredients
     {
+        Model.Ingredients m_ingredients = new Model.Ingredients();
+
+        Controller.CookBook c_cookbook;
         private string _userMessage;
 
         public string UserMessage
@@ -21,11 +24,9 @@ namespace View
             Console.WriteLine("Welcome to recipes");
         }
 
-        public void TempRecipes() {
-        Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-        Console.WriteLine("Pancakes; 20, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-        Console.WriteLine("Meatballs; 40, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
-
+         public string getUserChoice()
+        {
+            return Console.ReadLine();
         }
 
         public void IngredientsMenu() {
@@ -36,7 +37,7 @@ namespace View
             {
                 Console.WriteLine(UserMessage);
                 Console.WriteLine("");
-                UserMessage  = null;
+                UserMessage = null;
             }
           try
             {
@@ -46,13 +47,13 @@ namespace View
                     AddIngredients();
                 }
                 else if (userChoice == 2)
-                {
-                    Console.WriteLine("Implement back to menu");
+                {   
+                   c_cookbook.CookBookMenu();
                 }
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                     IngredientsMenu();
+                    IngredientsMenu();
                 }
             }
             catch (Exception)
@@ -63,20 +64,11 @@ namespace View
         }
         
         private void AddIngredients() {
-        Console.Clear();
-        Console.WriteLine("Add your ingredient");
-        Console.WriteLine("Enter name of the ingredient");
-        string ingredientName = getUserChoice();
-        Console.Clear();
-        Console.WriteLine("Enter unit");
-        string ingredientUnit = getUserChoice();
-        Console.Clear();
-        Console.WriteLine("Enter the price of the ingredient");
-        string ingredientPrice = getUserChoice();
-
+        AddIngredientName();
+        AddIngredientUnit();
+        AddIngredientPrice();
         Console.Clear();
         
-
         Console.WriteLine("Press 1 To add another ingredient");
         Console.WriteLine("Press 2 To go back");
         int userChoice = Int16.Parse(getUserChoice());
@@ -86,14 +78,31 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    Console.WriteLine("Implement back to menu 2");
+                    c_cookbook.CookBookMenu();
                 }
-     
         }
 
-         public string getUserChoice()
-        {
-            return Console.ReadLine();
+        private void AddIngredientName() {
+        Console.Clear();
+        Console.WriteLine("Add your ingredient");
+        Console.WriteLine("Enter name of the ingredient");
+        string ingredientName = getUserChoice();
+        m_ingredients.IngredientName = ingredientName;
+        }
+
+        private void AddIngredientUnit() {
+        Console.Clear();
+        Console.WriteLine("Enter unit");
+        string ingredientUnit = getUserChoice();
+        m_ingredients.IngredientUnit = ingredientUnit;
+        }
+
+        private void AddIngredientPrice() {
+        Console.Clear();
+        Console.WriteLine("Enter the price of the ingredient");
+        int ingredientPrice = Int16.Parse(getUserChoice());
+        m_ingredients.IngredientPrice = ingredientPrice;
+
         }
     }
 }
