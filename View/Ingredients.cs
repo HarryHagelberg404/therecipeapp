@@ -11,6 +11,7 @@ namespace View
         View.CookBookStartMenu v_CookBookStartMenu;
         private string _userMessage;
 
+        private string _ingredientUnit;
         public string UserMessage
         {
             get { return _userMessage; }
@@ -87,8 +88,29 @@ namespace View
         private void AddIngredientUnit() {
         Console.Clear();
         Console.WriteLine("Enter unit");
-        string ingredientUnit = getUserChoice();
-        m_ingredients.IngredientUnit = ingredientUnit;
+        Console.WriteLine("Press 1 to Unit: grams");
+        Console.WriteLine("Press 2 to Unit: litre");
+        Console.WriteLine("Press 3 to Unit: piece");
+        
+            int userChoice = Int16.Parse(getUserChoice());
+                if (userChoice == 1)
+                {
+                    _ingredientUnit = "grams";
+                }
+                else if (userChoice == 2)
+                {   
+                 _ingredientUnit = "litre";
+                } else if (userChoice == 3)
+                {   
+                 _ingredientUnit = "piece";
+                }
+                else
+                {
+                    UserMessage = "Please enter the number 1,2 or 3.";
+                    AddIngredientUnit();
+                
+              }
+            m_ingredients.IngredientUnit = _ingredientUnit;
         }
 
         private void AddIngredientPrice() {

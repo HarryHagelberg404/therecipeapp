@@ -6,7 +6,7 @@ namespace Database
 {
     class RecipesDB
     {
-        Model.Recipes m_recipes = new Model.Recipes();
+         Model.Recipes m_recipes;
           private string _dbFileName = "RecipeDB.txt";
 
          public void saveRecipe() {
