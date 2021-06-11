@@ -11,6 +11,22 @@ namespace View
         View.Ingredients v_ingredients = new View.Ingredients();
         Database.IngredientDB m_ingredientDB = new Database.IngredientDB();
         Database.RecipesDB m_recipeDB = new Database.RecipesDB();
+
+        private string _userMessage;
+
+        public string UserMessage
+        {
+            get { return _userMessage; }
+            set
+            {
+                _userMessage = value;
+            }
+        }
+
+            public string getUserChoice()
+        {
+            return Console.ReadLine();
+        }
           public void CookBookMenu() {
           Console.Clear();
           Console.WriteLine("Welcome to your digital Cookbook");
@@ -18,15 +34,15 @@ namespace View
           Console.WriteLine("Press 2 to add ingredients");
           Console.WriteLine("Press 3 to add recipe");
           Console.WriteLine("Press 4 to exit the application");
-           if (v_recipes.UserMessage != null)
+           if (UserMessage != null)
             {
-                Console.WriteLine(v_recipes.UserMessage);
+                Console.WriteLine(UserMessage);
                 Console.WriteLine("");
-                v_recipes.UserMessage = null;
+                UserMessage = null;
             }
              try
             {
-                int userChoice = Int16.Parse(v_recipes.getUserChoice());
+                int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
                     v_viewRecipes.ViewRecipesMenu();
@@ -47,13 +63,12 @@ namespace View
                 }
                 else
                 {
-                    v_recipes.UserMessage  = "Please enter the number 1,2,3 or 4.";
+                    UserMessage  = "Please enter the number 1,2,3 or 4.";
                     CookBookMenu();
                 }
             }
             catch (Exception)
             {
-                v_recipes.UserMessage  = "Please enter a valid number instead!";
                 CookBookMenu();
             }
         }
