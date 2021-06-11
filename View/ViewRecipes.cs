@@ -50,8 +50,7 @@ namespace View
                     UserMessage = "Please enter the number 1 or 2.";
                     ViewRecipesMenu();
                 }
-        
-        }
+            }
 
         private void TempRecipes() {
         Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");

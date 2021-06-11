@@ -52,8 +52,10 @@ namespace View
                 {
                     UserMessage = "Please enter the number 1 or 2.";
                     IngredientsMenu();
-                }
+                
             }
+            }
+
         
         private void AddIngredients() {
         AddIngredientName();

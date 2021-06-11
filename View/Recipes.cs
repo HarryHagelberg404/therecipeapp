@@ -56,6 +56,7 @@ namespace View
                     UserMessage = "Please enter the number 1 or 2.";
                     RecipesMenu();
                 }
+                  
         }
         
         private void AddRecipe() {
