@@ -7,7 +7,13 @@ namespace Controller
     class CookBook
     {
         View.Recipes v_recipes = new View.Recipes();
+
+        View.ViewRecipes v_viewRecipes = new View.ViewRecipes();
         View.Ingredients v_ingredients = new View.Ingredients();
+
+        Database.IngredientDB m_ingredientDB = new Database.IngredientDB();
+
+        Database.RecipesDB m_recipeDB = new Database.RecipesDB();
         
       
         public CookBook() 
@@ -21,11 +27,12 @@ namespace Controller
           Console.WriteLine("Press 1 to view your recipes");
           Console.WriteLine("Press 2 to add ingredients");
           Console.WriteLine("Press 3 to add recipe");
+          Console.WriteLine("Press 4 to exit the application");
            if (v_recipes.UserMessage != null)
             {
                 Console.WriteLine(v_recipes.UserMessage );
                 Console.WriteLine("");
-                v_recipes.UserMessage  = null;
+                v_recipes.UserMessage = null;
             }
 
              try
@@ -33,7 +40,7 @@ namespace Controller
                 int userChoice = Int16.Parse(v_recipes.getUserChoice());
                 if (userChoice == 1)
                 {
-                    v_recipes.TempRecipes();
+                    v_viewRecipes.TempRecipes();
                 }
                 else if (userChoice == 2)
                 {
@@ -42,11 +49,17 @@ namespace Controller
                 else if (userChoice == 3)
                 {
                     v_recipes.RecipesMenu();
+                } 
+                 else if (userChoice == 4)
+                {
+                  m_ingredientDB.saveIngredient();
+                  m_recipeDB.saveRecipe();
+                  System.Environment.Exit(0);
                 }
                 else
                 {
-                    v_recipes.UserMessage  = "Please enter the number 1,2 or 3.";
-                     CookBookMenu();
+                    v_recipes.UserMessage  = "Please enter the number 1,2,3 or 4.";
+                    CookBookMenu();
                 }
             }
             catch (Exception)
@@ -55,8 +68,6 @@ namespace Controller
                 CookBookMenu();
             }
         }
-
-
     }
 
 }
