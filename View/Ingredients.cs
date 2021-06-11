@@ -8,7 +8,7 @@ namespace View
     {
         Model.Ingredients m_ingredients = new Model.Ingredients();
 
-        Controller.CookBook c_cookbook;
+        View.CookBookStartMenu v_CookBookStartMenu;
         private string _userMessage;
 
         public string UserMessage
@@ -39,8 +39,6 @@ namespace View
                 Console.WriteLine("");
                 UserMessage = null;
             }
-          try
-            {
                 int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
@@ -48,7 +46,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {   
-                   c_cookbook.CookBookMenu();
+                   v_CookBookStartMenu.CookBookMenu();
                 }
                 else
                 {
@@ -56,12 +54,6 @@ namespace View
                     IngredientsMenu();
                 }
             }
-            catch (Exception)
-            {
-                UserMessage = "Please enter a valid number instead!";
-                IngredientsMenu();
-            }
-        }
         
         private void AddIngredients() {
         AddIngredientName();
@@ -78,7 +70,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    c_cookbook.CookBookMenu();
+                    v_CookBookStartMenu.CookBookMenu();
                 }
         }
 

@@ -6,9 +6,9 @@ namespace View
 {
     class Recipes
     {
-        Model.Recipes m_recipes = new Model.Recipes();
 
-        Controller.CookBook c_cookbook;
+        private View.CookBookStartMenu v_CookBookStartMenu;
+        Model.Recipes m_recipes = new Model.Recipes();
         private string _userMessage;
 
         public string UserMessage
@@ -19,6 +19,7 @@ namespace View
                 _userMessage = value;
             }
         }
+
         private  List<String> recipes = new List<String>();
         public Recipes() {
             Console.WriteLine("Welcome to recipes");
@@ -39,28 +40,22 @@ namespace View
                 Console.WriteLine("");
                 UserMessage  = null;
             }
-          try
-            {
                 int userChoice = Int16.Parse(getUserChoice());
+                Console.WriteLine(userChoice);
                 if (userChoice == 1)
                 {
                     AddRecipe();
                 }
                 else if (userChoice == 2)
                 {
-                   c_cookbook.CookBookMenu();
+                   v_CookBookStartMenu.CookBookMenu();
+                  
                 }
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
                     RecipesMenu();
                 }
-            }
-            catch (Exception)
-            {
-                UserMessage = "Please enter a valid number instead!";
-                RecipesMenu();
-            }
         }
         
         private void AddRecipe() {
@@ -79,7 +74,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                   c_cookbook.CookBookMenu();
+                   v_CookBookStartMenu.CookBookMenu();
                 }
      
         }
