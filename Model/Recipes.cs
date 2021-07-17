@@ -14,6 +14,10 @@ namespace Model
 
         private int _recipeIngredientsAmount;
 
+        private string _recipeIngredientsComment;
+
+        private List<string> _recipeInstructions;
+
         private string _recipeComment;
         public string RecipeName {
         get {return _recipeName;} 

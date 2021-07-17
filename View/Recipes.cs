@@ -6,9 +6,10 @@ namespace View
 {
     class Recipes
     {
-
+        Model.Persistence.RecipePersistence m_recipePersistence = new Model.Persistence.RecipePersistence();
         private View.CookBookStartMenu v_CookBookStartMenu;
         Model.Recipes m_recipes = new Model.Recipes();
+
         private string _userMessage;
 
         public string UserMessage
@@ -34,7 +35,7 @@ namespace View
         Console.Clear();
         Console.WriteLine("Press 1 To add recipe");
         Console.WriteLine("Press 2 To go back");
-          if (UserMessage != null)
+        if (UserMessage != null)
             {
                 Console.WriteLine(UserMessage);
                 Console.WriteLine("");
