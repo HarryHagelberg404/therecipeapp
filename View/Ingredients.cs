@@ -5,8 +5,7 @@ using System.Collections.Generic;
 namespace View
 {
     class Ingredients
-    {
-        Model.Ingredients m_ingredients = new Model.Ingredients();
+    { 
 
         View.CookBookStartMenu v_CookBookStartMenu;
         private string _userMessage;
@@ -21,17 +20,15 @@ namespace View
             }
         }
         private  List<String> Ingredient = new List<String>();
-        public Ingredients() {
-            Console.WriteLine("Welcome to recipes");
-        }
-
+      
          public string getUserChoice()
         {
             return Console.ReadLine();
         }
 
-        public void IngredientsMenu() {
+        public void IngredientsMenu(Controller.Ingredients c_ingredients) {
         Console.Clear();
+
         Console.WriteLine("Press 1 To add ingredients");
         Console.WriteLine("Press 2 To go back");
           if (UserMessage != null)
@@ -43,7 +40,7 @@ namespace View
                 int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients();
+                    AddIngredients(c_ingredients);
                 }
                 else if (userChoice == 2)
                 {   
@@ -52,16 +49,16 @@ namespace View
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                    IngredientsMenu();
+                    IngredientsMenu(c_ingredients);
                 
             }
             }
 
         
-        private void AddIngredients() {
-        AddIngredientName();
-        AddIngredientUnit();
-        AddIngredientPrice();
+        private void AddIngredients(Controller.Ingredients c_ingredients) {
+        AddIngredientName(c_ingredients);
+        AddIngredientUnit(c_ingredients);
+        AddIngredientPrice(c_ingredients);
         Console.Clear();
         
         Console.WriteLine("Press 1 To add another ingredient");
@@ -69,7 +66,7 @@ namespace View
         int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients();
+                    AddIngredients(c_ingredients);
                 }
                 else if (userChoice == 2)
                 {
@@ -77,15 +74,15 @@ namespace View
                 }
         }
 
-        private void AddIngredientName() {
+        private void AddIngredientName(Controller.Ingredients c_ingredients) {
         Console.Clear();
         Console.WriteLine("Add your ingredient");
         Console.WriteLine("Enter name of the ingredient");
         string ingredientName = getUserChoice();
-        m_ingredients.IngredientName = ingredientName;
+        c_ingredients.IngredientName = ingredientName;
         }
 
-        private void AddIngredientUnit() {
+        private void AddIngredientUnit(Controller.Ingredients c_ingredients) {
         Console.Clear();
         Console.WriteLine("Enter unit");
         Console.WriteLine("Press 1 to Unit: grams");
@@ -107,17 +104,17 @@ namespace View
                 else
                 {
                     UserMessage = "Please enter the number 1,2 or 3.";
-                    AddIngredientUnit();
+                    AddIngredientUnit(c_ingredients);
                 
               }
-            m_ingredients.IngredientUnit = _ingredientUnit;
+            c_ingredients.IngredientUnit = _ingredientUnit;
         }
 
-        private void AddIngredientPrice() {
+        private void AddIngredientPrice(Controller.Ingredients c_ingredients) {
         Console.Clear();
         Console.WriteLine("Enter the price of the ingredient");
         int ingredientPrice = Int16.Parse(getUserChoice());
-        m_ingredients.IngredientPrice = ingredientPrice;
+        c_ingredients.IngredientPrice = ingredientPrice;
 
         }
     }
