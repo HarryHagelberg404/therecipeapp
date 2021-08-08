@@ -31,8 +31,7 @@ namespace View
             Console.Clear();
             string test = this.m_recipePersistence.testString();
             Console.WriteLine(test);
-            Console.ReadLine();
-            /*
+            
             Console.WriteLine("Press 1 To view recipes");
             Console.WriteLine("Press 2 To go back");
             if (UserMessage != null)
@@ -55,7 +54,7 @@ namespace View
             {
                 UserMessage = "Please enter the number 1 or 2.";
                 ViewRecipesMenu();
-            }*/
+            }
         }
 
         private void addRecipe()
