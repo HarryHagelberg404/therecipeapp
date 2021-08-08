@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Model
+namespace Controller
 {
     class Recipes
     {  
@@ -44,4 +44,3 @@ namespace Model
         }
     }
 }
-
