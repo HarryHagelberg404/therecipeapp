@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Wr1EeAKgEBQezkWpXm214J434FQT2BppVzi+KxkRYlap930s0WMr70RdxvsLW4D7apg4BXLnxa8zeK3WfdfxSw==",
+  "dgSpecHash": "FB0K07qmAW5F9Arbls2tG5METHVlGQsb4PpjsFiRY6skLK2PJQQOuOPM9wWTeDuz5l8o0L+1OKm5e4k708ySmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\1dv607\\therecipeapp\\therecipeapp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/harryh/Projects/therecipeapp/therecipeapp.csproj",
+  "expectedPackageFiles": [
+    "/home/harryh/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
