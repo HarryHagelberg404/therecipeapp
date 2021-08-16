@@ -6,11 +6,11 @@ namespace Controller
 {
     class CookBook
     {
-        View.CookBookStartMenu v_CookBookStartMenu = new View.CookBookStartMenu();
+        View.CookBookMenu v_CookBookMenu = new View.CookBookMenu();
       
         public CookBook() 
         {
-            v_CookBookStartMenu.display_menu();
+            v_CookBookMenu.displayMenu();
         }
     }
 
