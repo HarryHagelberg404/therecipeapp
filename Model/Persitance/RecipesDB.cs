@@ -10,7 +10,7 @@ namespace Database
 
          public void saveRecipe(Controller.Recipes c_recipes) {
        
-            if (!File.Exists(_dbFileName))
+            if (!File.Exists(_dbFileName) && c_recipes.RecipeName.Length > 1)
             {
                 StreamWriter sw = File.CreateText(_dbFileName);
             {
@@ -18,9 +18,9 @@ namespace Database
             }
                         sw.Close();
             }
-            else
+            else if (File.Exists(_dbFileName) && c_recipes.RecipeName.Length > 1)
             {
-                StreamWriter sw = File.AppendText(_dbFileName);
+                StreamWriter sw = File.AppendText(_dbFileName );
                 {
      
                    sw.WriteLine($"Recipe:{c_recipes.RecipeName}, Portions:{c_recipes.RecipePortions}, Ingredients:{c_recipes.RecipeIngredient}, IngredientAmount:{c_recipes.RecipeIngredientAmount}, Comments:{c_recipes.RecipeComment}");   

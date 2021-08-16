@@ -10,7 +10,7 @@ namespace Database
         
          public void saveIngredient(Controller.Ingredients c_ingredient) {
        
-            if (!File.Exists(_dbFileName))
+            if (!File.Exists(_dbFileName) && c_ingredient.IngredientName.Length > 1)
             {
                 StreamWriter sw = File.CreateText(_dbFileName);
             {
@@ -18,7 +18,7 @@ namespace Database
             }
                         sw.Close();
             }
-            else
+            else if (File.Exists(_dbFileName) && c_ingredient.IngredientName.Length > 1)
             {
                 StreamWriter sw = File.AppendText(_dbFileName);
                 {

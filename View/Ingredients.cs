@@ -30,7 +30,9 @@ namespace View
         Console.Clear();
 
         Console.WriteLine("Press 1 To add ingredients");
-        Console.WriteLine("Press 2 To go back");
+        Console.WriteLine("Press 2 To edit ingredient");
+        Console.WriteLine("Press 3 To remove ingredient");
+        Console.WriteLine("Press 4 To go back");
           if (UserMessage != null)
             {
                 Console.WriteLine(UserMessage);
@@ -41,8 +43,17 @@ namespace View
                 if (userChoice == 1)
                 {
                     AddIngredients(c_ingredients);
+                } else if (userChoice == 2) {
+                    Console.WriteLine("Write the name of the ingredient you want to edit");
+                    string ingredientName = Console.ReadLine();
+                    if( c_ingredients.editIngredient(ingredientName) == true) {
+                      Console.WriteLine("Start edit");
+                    }
+                    // TODO Edit ingredient
+                } else if (userChoice == 3) {
+                    // TODO Remove ingredient
                 }
-                else if (userChoice == 2)
+                else if (userChoice == 4)
                 {   
                    v_CookBookStartMenu.CookBookMenu();
                 }

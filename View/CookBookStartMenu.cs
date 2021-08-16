@@ -61,9 +61,10 @@ namespace View
                 } 
                  else if (userChoice == 4)
                 {
-                  m_ingredientDB.saveIngredient(c_ingredients);
-                  m_recipeDB.saveRecipe(c_recipes);
-                  System.Environment.Exit(1);
+                    c_ingredients.isIngredientName();
+                    m_ingredientDB.saveIngredient(c_ingredients);
+                    // m_recipeDB.saveRecipe(c_recipes);
+                    System.Environment.Exit(1);
                 }
                 else
                 {
