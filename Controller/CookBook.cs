@@ -8,13 +8,10 @@ namespace Controller
     {
         View.CookBookStartMenu v_CookBookStartMenu = new View.CookBookStartMenu();
       
-      
         public CookBook() 
         {
-           v_CookBookStartMenu.CookBookMenu();
+            v_CookBookStartMenu.display_menu();
         }
-
-      
     }
 
 }

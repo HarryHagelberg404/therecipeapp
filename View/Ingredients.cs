@@ -44,7 +44,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {   
-                   v_CookBookStartMenu.CookBookMenu();
+                   v_CookBookStartMenu.display_menu();
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    v_CookBookStartMenu.CookBookMenu();
+                    v_CookBookStartMenu.display_menu();
                 }
         }
 
