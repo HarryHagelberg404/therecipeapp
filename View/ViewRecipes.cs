@@ -6,7 +6,7 @@ namespace View
 {
     class ViewRecipes
     {
-        View.CookBookStartMenu v_CookBookStartMenu;
+        View.CookBookMenu v_CookBookMenu;
         Model.Persistence.RecipePersistence m_recipePersistence = new Model.Persistence.RecipePersistence();
 
         private string _userMessage;
@@ -48,7 +48,7 @@ namespace View
             }
             else if (userChoice == 2)
             {
-                v_CookBookStartMenu.display_menu();      
+                v_CookBookMenu.displayMenu();      
             }
             else
             {

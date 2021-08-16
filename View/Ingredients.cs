@@ -7,7 +7,7 @@ namespace View
     class Ingredients
     { 
 
-        View.CookBookStartMenu v_CookBookStartMenu;
+        View.CookBookMenu v_CookBookMenu;
         private string _userMessage;
 
         private string _ingredientUnit;
@@ -55,7 +55,7 @@ namespace View
                 }
                 else if (userChoice == 4)
                 {   
-                   v_CookBookStartMenu.display_menu();
+                   v_CookBookMenu.displayMenu();
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace View
                 }
                 else if (userChoice == 2)
                 {
-                    v_CookBookStartMenu.display_menu();
+                    v_CookBookMenu.displayMenu();
                 }
         }
 
