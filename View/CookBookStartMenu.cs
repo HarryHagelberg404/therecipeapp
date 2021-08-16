@@ -71,36 +71,8 @@ namespace View
             } 
             else if (userChoice == 4)
             {
-<<<<<<< HEAD
-                int userChoice = Int16.Parse(getUserChoice());
-                if (userChoice == 1)
-                {
-                    v_viewRecipes.ViewRecipesMenu();
-                }
-                else if (userChoice == 2)
-                {
-                    v_ingredients.IngredientsMenu(c_ingredients);
-                } 
-                else if (userChoice == 3)
-                {
-                    v_recipes.RecipesMenu(c_recipes);
-                } 
-                 else if (userChoice == 4)
-                {
-                    c_ingredients.isIngredientName();
-                    m_ingredientDB.saveIngredient(c_ingredients);
-                    // m_recipeDB.saveRecipe(c_recipes);
-                    System.Environment.Exit(1);
-                }
-                else
-                {
-                    UserMessage  = "Please enter the number 1,2,3 or 4.";
-                    CookBookMenu();
-                }
-=======
                 this.c_persistence = new Controller.Persistence(this.c_ingredients, this.c_recipes);
                 this.c_persistence.exit_and_save();
->>>>>>> ce2e438ed3f187c3702ec956ef683a572a6094fc
             }
             else
             {
