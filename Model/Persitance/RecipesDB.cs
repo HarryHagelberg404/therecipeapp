@@ -6,27 +6,27 @@ namespace Database
 {
     class RecipesDB
     {
-          private string _dbFileName = "RecipeDB.txt";
+        private string _dbFileName = "RecipeDB.txt";
 
-         public void saveRecipe(Controller.Recipes c_recipes) {
+        public void saveRecipe(Model.Recipe m_recipe) {
        
-            if (!File.Exists(_dbFileName) && c_recipes.RecipeName.Length > 1)
+            if (!File.Exists(_dbFileName) && m_recipe.RecipeName.Length > 1)
             {
                 StreamWriter sw = File.CreateText(_dbFileName);
             {
-                        sw.WriteLine($"Recipe:{c_recipes.RecipeName}, Portions:{c_recipes.RecipePortions}, Ingredients:{c_recipes.RecipeIngredient}, IngredientAmount:{c_recipes.RecipeIngredientAmount}, Comments:{c_recipes.RecipeComment}");   
+                sw.WriteLine($"Recipe:{m_recipe.RecipeName}, Portions:{m_recipe.RecipePortions}, Ingredients:{m_recipe.RecipeIngredient}, IngredientAmount:{m_recipe.RecipeIngredientAmount}, Comments:{m_recipe.RecipeComment}");   
             }
-                        sw.Close();
+                sw.Close();
             }
-            else if (File.Exists(_dbFileName) && c_recipes.RecipeName.Length > 1)
+            else if (File.Exists(_dbFileName) && m_recipe.RecipeName.Length > 1)
             {
                 StreamWriter sw = File.AppendText(_dbFileName );
                 {
      
-                   sw.WriteLine($"Recipe:{c_recipes.RecipeName}, Portions:{c_recipes.RecipePortions}, Ingredients:{c_recipes.RecipeIngredient}, IngredientAmount:{c_recipes.RecipeIngredientAmount}, Comments:{c_recipes.RecipeComment}");   
+                   sw.WriteLine($"Recipe:{m_recipe.RecipeName}, Portions:{m_recipe.RecipePortions}, Ingredients:{m_recipe.RecipeIngredient}, IngredientAmount:{m_recipe.RecipeIngredientAmount}, Comments:{m_recipe.RecipeComment}");   
 
                 }
-                 sw.Close();   
+                sw.Close();   
             }
         }
 

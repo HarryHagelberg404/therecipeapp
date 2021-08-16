@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace View
 {
-    class CookBookStartMenu
+    class CookBookMenu
     {
-        View.Recipes v_recipes = new View.Recipes();
+        View.RecipeMenu v_recipeMenu = new View.RecipeMenu();
         View.ViewRecipes v_viewRecipes = new View.ViewRecipes();
         View.Ingredients v_ingredients = new View.Ingredients();
 
         Controller.Ingredients c_ingredients = new Controller.Ingredients();
-        Controller.Recipes c_recipes = new Controller.Recipes();
+        Model.Recipe m_recipe = new Model.Recipe();
         Controller.Persistence c_persistence;
 
         private string _userMessage;
@@ -41,7 +41,7 @@ namespace View
             }
         }
 
-        public void display_menu() {
+        public void displayMenu() {
             Console.Clear();
             Console.WriteLine("Welcome to your CLI Recipe App! \n");
             Console.WriteLine("Press 1. To view your recipes");
@@ -67,18 +67,22 @@ namespace View
             } 
             else if (userChoice == 3)
             {
-                v_recipes.RecipesMenu(c_recipes);
+                v_recipeMenu.displayMenu(m_recipe);
             } 
             else if (userChoice == 4)
             {
+<<<<<<< HEAD:View/CookBookStartMenu.cs
                 this.c_persistence = new Controller.Persistence(this.c_ingredients, this.c_recipes);
+=======
+                this.c_persistence = new Controller.Persistence(this.c_ingredients, this.m_recipe);
+>>>>>>> 1cd0c15b3fb68c03acf17244740859e3084e3c9f:View/CookBookMenu.cs
                 this.c_persistence.exit_and_save();
             }
             else
             {
                 // Set usermessage to display
                 this.UserMessage  = "Please enter the number 1, 2, 3 or 4.";
-                this.display_menu();
+                this.displayMenu();
             }
         }
     }

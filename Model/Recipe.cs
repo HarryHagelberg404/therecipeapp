@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Controller
+namespace Model
 {
-    class Recipes
+    class Recipe
     {  
         private string _recipeName;
 
@@ -19,6 +19,7 @@ namespace Controller
         private List<string> _recipeInstructions;
 
         private string _recipeComment;
+        
         public string RecipeName {
         get {return _recipeName;} 
         set {_recipeName = value;}
