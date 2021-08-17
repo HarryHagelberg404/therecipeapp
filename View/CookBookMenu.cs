@@ -71,11 +71,7 @@ namespace View
             } 
             else if (userChoice == 4)
             {
-<<<<<<< HEAD:View/CookBookStartMenu.cs
-                this.c_persistence = new Controller.Persistence(this.c_ingredients, this.c_recipes);
-=======
                 this.c_persistence = new Controller.Persistence(this.c_ingredients, this.m_recipe);
->>>>>>> 1cd0c15b3fb68c03acf17244740859e3084e3c9f:View/CookBookMenu.cs
                 this.c_persistence.exit_and_save();
             }
             else
