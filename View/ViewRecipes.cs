@@ -6,7 +6,6 @@ namespace View
 {
     class ViewRecipes
     {
-        View.CookBookMenu v_CookBookMenu;
         Model.Persistence.RecipePersistence m_recipePersistence = new Model.Persistence.RecipePersistence();
 
         private string _userMessage;
@@ -26,7 +25,7 @@ namespace View
             return Console.ReadLine();
         }
 
-        public void ViewRecipesMenu()
+        public void ViewRecipesMenu(View.CookBookMenu v_CookBookMenu)
         {
             Console.Clear();
             string test = this.m_recipePersistence.testString();
@@ -44,7 +43,7 @@ namespace View
             Console.WriteLine(userChoice);
             if (userChoice == 1)
             {
-                TempRecipes();
+                TempRecipes(v_CookBookMenu);
             }
             else if (userChoice == 2)
             {
@@ -53,7 +52,7 @@ namespace View
             else
             {
                 UserMessage = "Please enter the number 1 or 2.";
-                ViewRecipesMenu();
+                ViewRecipesMenu(v_CookBookMenu);
             }
         }
 
@@ -67,7 +66,7 @@ namespace View
 
         }
 
-        private void TempRecipes() {
+        private void TempRecipes(View.CookBookMenu v_CookBookMenu) {
             Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Pancakes; 20, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Meatballs; 40, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
@@ -83,12 +82,12 @@ namespace View
             Console.WriteLine(userChoice);
             if (userChoice == 2)
             {
-                ViewRecipesMenu();
+                ViewRecipesMenu(v_CookBookMenu);
             }
             else
             {
                 UserMessage = "Please enter the number 1 or 2.";
-                TempRecipes();
+                TempRecipes(v_CookBookMenu);
             }   
         }
         

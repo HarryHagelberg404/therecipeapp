@@ -58,16 +58,16 @@ namespace View
             int userChoice = getUserChoice();
             if (userChoice == 1)
             {
-                // Pass controller to view
-                v_viewRecipes.ViewRecipesMenu();
+                // Pass menu to view
+                v_viewRecipes.ViewRecipesMenu(this);
             }
             else if (userChoice == 2)
             {
-                v_ingredients.IngredientsMenu(c_ingredients);
+                v_ingredients.IngredientsMenu(this, c_ingredients);
             } 
             else if (userChoice == 3)
             {
-                v_recipeMenu.displayMenu(m_recipe);
+                v_recipeMenu.displayMenu(this, m_recipe);
             } 
             else if (userChoice == 4)
             {

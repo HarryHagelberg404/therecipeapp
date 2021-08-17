@@ -7,7 +7,6 @@ namespace View
     class RecipeMenu
     {
         Model.Persistence.RecipePersistence m_recipePersistence = new Model.Persistence.RecipePersistence();
-        private View.CookBookMenu v_CookBookMenu;
 
         private string _userMessage;
 
@@ -31,7 +30,7 @@ namespace View
             return Console.ReadLine();
         }
 
-        public void displayMenu(Model.Recipe m_recipe) {
+        public void displayMenu(View.CookBookMenu v_CookBookMenu, Model.Recipe m_recipe) {
             Console.Clear();
             Console.WriteLine("Press 1 To add recipe");
             Console.WriteLine("Press 2 To go back");
@@ -45,7 +44,7 @@ namespace View
             Console.WriteLine(userChoice);
             if (userChoice == 1)
             {
-                AddRecipe(m_recipe);
+                AddRecipe(v_CookBookMenu, m_recipe);
             }
             else if (userChoice == 2)
             {
@@ -54,12 +53,12 @@ namespace View
             else
             {
                 UserMessage = "Please enter the number 1 or 2.";
-                this.displayMenu(m_recipe);
+                this.displayMenu(v_CookBookMenu, m_recipe);
             }
                   
         }
         
-        private void AddRecipe(Model.Recipe m_recipe) {
+        private void AddRecipe(View.CookBookMenu v_CookBookMenu, Model.Recipe m_recipe) {
             Console.Clear();
             Console.WriteLine("Add your recipe");
             AddRecipeName(m_recipe);
@@ -71,7 +70,7 @@ namespace View
             int userChoice = Int16.Parse(getUserChoice());
             if (userChoice == 1)
             {
-                AddRecipe(m_recipe);
+                AddRecipe(v_CookBookMenu, m_recipe);
             }
             else if (userChoice == 2)
             {

@@ -6,8 +6,6 @@ namespace View
 {
     class Ingredients
     { 
-
-        View.CookBookMenu v_CookBookMenu;
         private string _userMessage;
 
         private string _ingredientUnit;
@@ -26,7 +24,7 @@ namespace View
             return Console.ReadLine();
         }
 
-        public void IngredientsMenu(Controller.Ingredients c_ingredients) {
+        public void IngredientsMenu(View.CookBookMenu v_CookBookMenu, Controller.Ingredients c_ingredients) {
         Console.Clear();
 
         Console.WriteLine("Press 1 To add ingredients");
@@ -42,7 +40,7 @@ namespace View
                 int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients(c_ingredients);
+                    AddIngredients(v_CookBookMenu, c_ingredients);
                 } else if (userChoice == 2) {
                     Console.WriteLine("Write the name of the ingredient you want to edit");
                     string ingredientName = Console.ReadLine();
@@ -60,13 +58,13 @@ namespace View
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                    IngredientsMenu(c_ingredients);
+                    IngredientsMenu(v_CookBookMenu, c_ingredients);
                 
             }
             }
 
         
-        private void AddIngredients(Controller.Ingredients c_ingredients) {
+        private void AddIngredients(View.CookBookMenu v_CookBookMenu, Controller.Ingredients c_ingredients) {
         AddIngredientName(c_ingredients);
         AddIngredientUnit(c_ingredients);
         AddIngredientPrice(c_ingredients);
@@ -77,7 +75,7 @@ namespace View
         int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients(c_ingredients);
+                    AddIngredients(v_CookBookMenu, c_ingredients);
                 }
                 else if (userChoice == 2)
                 {
