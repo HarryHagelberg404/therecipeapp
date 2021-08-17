@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/harryh/Projects/therecipeapp/therecipeapp.csproj": {}
+    "C:\\Users\\simon\\1dv607\\therecipeapp\\therecipeapp.csproj": {}
   },
   "projects": {
-    "/home/harryh/Projects/therecipeapp/therecipeapp.csproj": {
+    "C:\\Users\\simon\\1dv607\\therecipeapp\\therecipeapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/harryh/Projects/therecipeapp/therecipeapp.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\1dv607\\therecipeapp\\therecipeapp.csproj",
         "projectName": "therecipeapp",
-        "projectPath": "/home/harryh/Projects/therecipeapp/therecipeapp.csproj",
-        "packagesPath": "/home/harryh/.nuget/packages/",
-        "outputPath": "/home/harryh/Projects/therecipeapp/obj/",
+        "projectPath": "C:\\Users\\simon\\1dv607\\therecipeapp\\therecipeapp.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\1dv607\\therecipeapp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/harryh/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,18 +53,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
