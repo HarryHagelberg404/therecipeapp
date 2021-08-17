@@ -1,36 +1,34 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+namespace View {
 
-namespace View
-{
-    class ViewRecipes
+class ViewMenu {
+
+
+ private string _userMessage;
+
+    public string UserMessage
     {
-        Model.Persistence.RecipePersistence m_recipePersistence = new Model.Persistence.RecipePersistence();
-
-        private string _userMessage;
-
-        public string UserMessage
+        get { return _userMessage; }
+        set
         {
-            get { return _userMessage; }
-            set
-            {
-                _userMessage = value;
-            }
+            _userMessage = value;
         }
+    }
 
          
-        public string getUserChoice()
+
+
+               public string getUserChoice()
         {
             return Console.ReadLine();
         }
 
-        public void ViewRecipesMenu(View.CookBookMenu v_CookBookMenu)
+        public void viewMenu(View.CookBook v_CookBookMenu)
         {
             Console.Clear();
-            string test = this.m_recipePersistence.testString();
-            Console.WriteLine(test);
-            
+               
             Console.WriteLine("Press 1 To view recipes");
             Console.WriteLine("Press 2 To go back");
             if (UserMessage != null)
@@ -52,7 +50,7 @@ namespace View
             else
             {
                 UserMessage = "Please enter the number 1 or 2.";
-                ViewRecipesMenu(v_CookBookMenu);
+                viewMenu(v_CookBookMenu);
             }
         }
 
@@ -66,7 +64,7 @@ namespace View
 
         }
 
-        private void TempRecipes(View.CookBookMenu v_CookBookMenu) {
+        private void TempRecipes(View.CookBook v_CookBookMenu) {
             Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Pancakes; 20, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Meatballs; 40, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
@@ -82,7 +80,7 @@ namespace View
             Console.WriteLine(userChoice);
             if (userChoice == 2)
             {
-                ViewRecipesMenu(v_CookBookMenu);
+                viewMenu(v_CookBookMenu);
             }
             else
             {

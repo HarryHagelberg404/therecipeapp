@@ -6,7 +6,8 @@ namespace therecipeapp
     {
         static void Main(string[] args)
         {
-            Controller.CookBook cookBook = new Controller.CookBook();
+            View.CookBook cookBook = new View.CookBook();
+            cookBook.displayMenu();
         }
     }
 }

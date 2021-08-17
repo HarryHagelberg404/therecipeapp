@@ -4,15 +4,18 @@ using System.Collections.Generic;
 
 namespace View
 {
-    class CookBookMenu
+    class CookBook
     {
-        View.RecipeMenu v_recipeMenu = new View.RecipeMenu();
-        View.ViewRecipes v_viewRecipes = new View.ViewRecipes();
-        View.Ingredients v_ingredients = new View.Ingredients();
+        View.AddMenu v_addMenu = new View.AddMenu();
 
-        Controller.Ingredients c_ingredients = new Controller.Ingredients();
+        View.EditMenu v_editMenu = new View.EditMenu();
+
+        View.ViewMenu v_viewMenu = new View.ViewMenu();
+
         Model.Recipe m_recipe = new Model.Recipe();
+
         Controller.Persistence c_persistence;
+
 
         private string _userMessage;
 
@@ -44,9 +47,9 @@ namespace View
         public void displayMenu() {
             Console.Clear();
             Console.WriteLine("Welcome to your CLI Recipe App! \n");
-            Console.WriteLine("Press 1. To view your recipes");
-            Console.WriteLine("Press 2. To edit existing recipe");
-            Console.WriteLine("Press 3. To add a new recipe");
+            Console.WriteLine("Press 1. To view your recipes/ingredient");
+            Console.WriteLine("Press 2. To edit existing recipe/ingredient");
+            Console.WriteLine("Press 3. To add a new recipe/ingredient");
             Console.WriteLine("Press 4. To exit the application");
 
             // Display user message before menu choice
@@ -59,19 +62,19 @@ namespace View
             if (userChoice == 1)
             {
                 // Pass menu to view
-                v_viewRecipes.ViewRecipesMenu(this);
+                v_viewMenu.viewMenu(this);
             }
             else if (userChoice == 2)
             {
-                v_ingredients.IngredientsMenu(this, c_ingredients);
+                v_editMenu.editMenu(this, c_persistence);
             } 
             else if (userChoice == 3)
             {
-                v_recipeMenu.displayMenu(this, m_recipe);
+                v_addMenu.addMenu(this, c_persistence);
             } 
             else if (userChoice == 4)
             {
-                this.c_persistence = new Controller.Persistence(this.c_ingredients, this.m_recipe);
+                this.c_persistence = new Controller.Persistence(this.m_recipe);
                 this.c_persistence.exit_and_save();
             }
             else

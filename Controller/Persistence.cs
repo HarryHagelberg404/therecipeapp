@@ -6,25 +6,69 @@ namespace Controller
 {
     class Persistence
     {
-        Controller.Ingredients c_ingredients;
-
+    
         Model.Recipe m_recipe;
-        Database.IngredientDB m_ingredientDB = new Database.IngredientDB();
-        Database.RecipesDB m_recipeDB = new Database.RecipesDB();
+
+        Model.Persistence m_persistence;
+
+        private string _dbFileName = "IngredientDB.txt";
       
-        public Persistence(Controller.Ingredients ingredients, Model.Recipe recipe) 
+
+        public Persistence(Model.Recipe m_recipe) 
         {
-            this.c_ingredients = ingredients;
-            this.m_recipe = recipe;
+            this.m_recipe = m_recipe;
         }
 
         public void exit_and_save()
         {
             // Anrop till controller -> dummy_save, anrop till modellen sker från controller istället´
-            m_ingredientDB.saveIngredient(c_ingredients);
-            m_recipeDB.saveRecipe(m_recipe);
+            m_persistence.saveIngredient(this.m_recipe);
+            m_persistence.saveRecipe(this.m_recipe);
             System.Environment.Exit(1);
         }
+
+    // Checks IngredientDB for duplicates and make the IngredientName to an empty string when it already exists.
+    public void isIngredientName () {
+
+        if(File.Exists(_dbFileName)) {
+        string[] lines = System.IO.File.ReadAllLines("IngredientDB.txt");
+        foreach (string line in lines)
+        {
+            // Use a tab to indent each line of the file.
+            Console.WriteLine("\t" + line);
+            Console.WriteLine(line.Split(':' , ',')[1]);
+            if(this.m_recipe.IngredientName == line.Split(':' , ',')[1]) {
+             this.m_recipe.IngredientName = " ";
+            } 
+        }
+        }
+    }
+
+    // Edit ingredient
+    public bool editIngredient (string ingredient) {
+     if(File.Exists(_dbFileName)) {
+        string[] lines = System.IO.File.ReadAllLines("IngredientDB.txt");
+        foreach (string line in lines)
+        {
+            // Use a tab to indent each line of the file.
+            Console.WriteLine("\t" + line);
+            Console.WriteLine(line.Split(':' , ',')[1]);
+            if(ingredient == line.Split(':' , ',')[1]) {
+             return true;
+            } 
+            else {
+            return false;
+            }
+        }
+        }
+        return false;
+    }
+
+    // Remove ingredient
+    public void removeIngredient () {
+    
+    }
+      
     }
 
 }

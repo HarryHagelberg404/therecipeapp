@@ -19,6 +19,12 @@ namespace Model
         private List<string> _recipeInstructions;
 
         private string _recipeComment;
+
+        private string _ingredientName;
+
+        private string _ingredientUnit;
+
+        private int _ingredientPrice;
         
         public string RecipeName {
         get {return _recipeName;} 
@@ -43,5 +49,21 @@ namespace Model
         get {return _recipeComment;} 
         set {_recipeComment = value;}
         }
+
+        public string IngredientName {
+        get {return _ingredientName;} 
+        set {_ingredientName = value;}
+        }
+
+        public string IngredientUnit {
+        get {return _ingredientUnit;} 
+        set {_ingredientUnit = value;}
+        }
+
+        public int IngredientPrice {
+        get {return _ingredientPrice;} 
+        set {_ingredientPrice = value;}
+        }
+
     }
 }
