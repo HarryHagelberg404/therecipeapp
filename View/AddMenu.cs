@@ -11,8 +11,8 @@ namespace View
         {
             Console.Clear();
             Console.WriteLine("Welcome to the recipe creator! \n");
-            Console.WriteLine("Press 1. To create a new recipe");
-            Console.WriteLine("Press 2. To go back");
+            Console.WriteLine("Press 1. To go back");
+            Console.WriteLine("Press 2. To create a new recipe");
             return Console.ReadLine();
         }
 

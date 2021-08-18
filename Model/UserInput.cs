@@ -30,5 +30,11 @@ namespace Model
                 this.Choice = 0;
             }
         }
+
+        // To increase clarity when used
+        public void resetChoice()
+        {
+            this.Choice = 0;
+        }
     }
 }

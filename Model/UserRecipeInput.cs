@@ -39,5 +39,11 @@ namespace Model
                 this.Value = value;
             }
         }
+
+        // To increase clarity when used
+        public void resetValue()
+        {
+            Value = null;
+        }
     }
 }

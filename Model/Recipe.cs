@@ -14,32 +14,32 @@ namespace Model
         
         public string Name
         {
-            get { return _recipeName; } 
-            set { _recipeName = value; }
+            get { return this._name; } 
+            set { this._name = value; }
         }
 
         public int Portions
         {
-            get { return _portions; } 
-            set { _portions = value; }
+            get { return this._portions; } 
+            set { this._portions = value; }
         }
 
         public List<Ingredient> Ingredient
         {
-            get { return _ingredients; } 
-            set { _recipeIngredients.Add(value); }
+            get { return this._ingredients; } 
+            set { this._ingredients = value; }
         }
 
         public string Comment
         {
-            get { return _comment; } 
-            set {_comment = value; }
+            get { return this._comment; } 
+            set { this._comment = value; }
         }
 
         public List<string> Instructions
         {
-            get { return _instructions; }
-            set { _instructions.Add(value); }
+            get { return this._instructions; }
+            set { this._instructions = value; }
         }
     }
 }

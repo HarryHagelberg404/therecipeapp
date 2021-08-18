@@ -1,9 +1,11 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+
 namespace Model
 {
     class Persistence {
+    /*
     private string _dbFileIngredient = "IngredientDB.txt";
 
     private string _dbFileRecipe = "RecipeDB.txt";
@@ -51,6 +53,6 @@ namespace Model
                 sw.Close();   
             }
         }
-
+        */
     }
 }

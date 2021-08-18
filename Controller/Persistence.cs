@@ -22,9 +22,13 @@ namespace Controller
             return recipeList;
         }
 
-        public string retrieveRecipe(int indexOfRecipe)
+        public Model.Recipe retrieveRecipe(int indexOfRecipe)
         {
-            return "Bacon";
+            // Creation of test recipe for now
+            // Later change to retrieve recipe of index chosen
+            Model.Recipe recipe = new Model.Recipe();
+            recipe.Name = "SPAGHETTT";
+            return recipe;
         }
       
         /*

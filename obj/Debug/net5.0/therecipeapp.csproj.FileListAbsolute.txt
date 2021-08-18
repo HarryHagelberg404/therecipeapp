@@ -5,7 +5,6 @@
 /home/harryh/Projects/therecipeapp/bin/Debug/net5.0/therecipeapp.dll
 /home/harryh/Projects/therecipeapp/bin/Debug/net5.0/ref/therecipeapp.dll
 /home/harryh/Projects/therecipeapp/bin/Debug/net5.0/therecipeapp.pdb
-/home/harryh/Projects/therecipeapp/obj/Debug/net5.0/therecipeapp.csproj.AssemblyReference.cache
 /home/harryh/Projects/therecipeapp/obj/Debug/net5.0/therecipeapp.GeneratedMSBuildEditorConfig.editorconfig
 /home/harryh/Projects/therecipeapp/obj/Debug/net5.0/therecipeapp.AssemblyInfoInputs.cache
 /home/harryh/Projects/therecipeapp/obj/Debug/net5.0/therecipeapp.AssemblyInfo.cs
@@ -30,3 +29,4 @@ C:/Users/simon/1dv607/therecipeapp/obj/Debug/net5.0/therecipeapp.dll
 C:/Users/simon/1dv607/therecipeapp/obj/Debug/net5.0/ref/therecipeapp.dll
 C:/Users/simon/1dv607/therecipeapp/obj/Debug/net5.0/therecipeapp.pdb
 C:/Users/simon/1dv607/therecipeapp/obj/Debug/net5.0/therecipeapp.genruntimeconfig.cache
+/home/harryh/Projects/therecipeapp/obj/Debug/net5.0/therecipeapp.csprojAssemblyReference.cache

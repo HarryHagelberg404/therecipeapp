@@ -34,6 +34,10 @@ namespace Controller
                     System.Environment.Exit(1);
                     break;
             }
+
+            // When user returns present them once more
+            this.m_userInput.resetChoice();
+            this.initCookBook();
         }
     }
 }

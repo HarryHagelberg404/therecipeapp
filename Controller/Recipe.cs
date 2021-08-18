@@ -16,11 +16,11 @@ namespace Controller
         Model.UserRecipeInput m_userRecipeInput= new Model.UserRecipeInput();
 
         Controller.Persistence c_persistence = new Controller.Persistence();
-
-        // Leave empty because of either later creation or load
-
+        
         public void initViewRecipes()
         {
+            this.m_userInput.resetChoice();
+
             while(this.m_userInput.Choice == 0)
             {
                 this.m_userInput.validate(this.v_viewMenu.displayMenu(this.c_persistence.retrieveRecipes()));
@@ -28,17 +28,33 @@ namespace Controller
             switch(this.m_userInput.Choice)
             {
                 case 1:
-                    break;
+                    // Return to previous menu
+                    return;
                 default:
-                    // Retrieve list of recipes from persistence controller
-                    this.v_viewMenu.showRecipe(this.c_persistence.retrieveRecipe(m_userInput.Choice));
+                    // Retrieve specific recipe based on chosen index
+                    // Reduce validated userInput by 2 to match 0-based index of recipe list
+                    this.viewRecipe(this.c_persistence.retrieveRecipe(this.m_userInput.Choice - 2));
                     break;
             }
+
+            // When user returns present them once more
+            this.m_userInput.resetChoice();
+            this.initViewRecipes();
         }
 
-        private void viewRecipe()
+        private void viewRecipe(Model.Recipe recipe)
         {
+            this.m_userInput.resetChoice();
 
+            while(this.m_userInput.Choice == 0)
+            {
+                this.m_userInput.validate(this.v_viewMenu.showRecipe(recipe));
+            }
+            switch(this.m_userInput.Choice)
+            {
+                case 1:
+                    return;
+            }
         }
 
         public void initEditRecipe()
@@ -53,7 +69,8 @@ namespace Controller
 
         public void initAddRecipe()
         {
-            // Show menu
+            this.m_userInput.resetChoice();
+
             while(this.m_userInput.Choice == 0)
             {
                 this.m_userInput.validate(this.v_addMenu.displayMenu());
@@ -61,9 +78,9 @@ namespace Controller
             switch(this.m_userInput.Choice)
             {
                 case 1:
-                    this.addRecipe();
-                    break;
+                    return;
                 case 2:
+                    this.addRecipe();
                     break;
             }
         }
@@ -89,6 +106,12 @@ namespace Controller
 
             // Add value to model
             this.m_userRecipeInput.Value = null;
+        }
+
+        // Methods that could be reused multiple times in control flow
+        private void addIngredient()
+        {
+
         }
     }
 }
