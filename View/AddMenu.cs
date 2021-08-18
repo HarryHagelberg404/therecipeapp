@@ -1,21 +1,41 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-namespace View {
 
-class AddMenu {
-
-       private string _userMessage;
-
-        private string _ingredientUnit;
-        public string UserMessage
+namespace View
+{
+    class AddMenu
+    {
+        // Steps of creating a recipe
+        public string displayMenu()
         {
-            get { return _userMessage; }
-            set
-            {
-                _userMessage = value;
-            }
+            Console.Clear();
+            Console.WriteLine("Welcome to the recipe creator! \n");
+            Console.WriteLine("Press 1. To create a new recipe");
+            Console.WriteLine("Press 2. To go back");
+            return Console.ReadLine();
         }
+
+        public string addRecipeName()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter the name of your new recipe: \n");
+            return Console.ReadLine();
+        }
+
+        public string addRecipePortions()
+        {
+            Console.Clear();
+            Console.WriteLine("Please enter the number of portions of your new recipe: \n");
+            return Console.ReadLine();
+        }
+        
+        
+        
+        
+        
+        
+        /*
         private  List<String> Ingredient = new List<String>();
 
         private List<String> Recipe = new List<string>();
@@ -25,7 +45,7 @@ class AddMenu {
             return Console.ReadLine();
         }
 
-        public void addMenu(View.CookBook v_CookBook, Controller.Persistence c_persistence) {
+        public void addMenu(View.BaseMenu v_baseMenu, Controller.Persistence c_persistence) {
         Console.Clear();
 
         Console.WriteLine("Press 1 To add ingredient");
@@ -40,25 +60,25 @@ class AddMenu {
                 int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients(v_CookBook);
+                    AddIngredients(v_baseMenu);
                 } else if (userChoice == 2) {
-                   AddRecipe(v_CookBook);
+                   AddRecipe(v_baseMenu);
                 }
                 else if (userChoice == 3)
                 {   
-                   v_CookBook.displayMenu();
+                   v_baseMenu.displayMenu();
                 }
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                    addMenu(v_CookBook, c_persistence);
+                    addMenu(v_baseMenu, c_persistence);
                 
             }
             
         }
 
         
-        private void AddIngredients(View.CookBook v_CookBook) {
+        private void AddIngredients(View.BaseMenu v_baseMenu) {
         AddIngredientName();
         AddIngredientUnit();
         AddIngredientPrice();
@@ -69,11 +89,11 @@ class AddMenu {
         int userChoice = Int16.Parse(getUserChoice());
                 if (userChoice == 1)
                 {
-                    AddIngredients(v_CookBook);
+                    AddIngredients(v_baseMenu);
                 }
                 else if (userChoice == 2)
                 {
-                    v_CookBook.displayMenu();
+                    v_baseMenu.displayMenu();
                 }
         }
 
@@ -121,7 +141,7 @@ class AddMenu {
 
         }
 
-        private void AddRecipe(View.CookBook v_CookBook) {
+        private void AddRecipe(View.BaseMenu v_baseMenu) {
             Console.Clear();
             Console.WriteLine("Add your recipe");
             AddRecipeName();
@@ -133,11 +153,11 @@ class AddMenu {
             int userChoice = Int16.Parse(getUserChoice());
             if (userChoice == 1)
             {
-                AddRecipe(v_CookBook);
+                AddRecipe(v_baseMenu);
             }
             else if (userChoice == 2)
             {
-                v_CookBook.displayMenu();
+                v_baseMenu.displayMenu();
             }
         }
 
@@ -171,6 +191,6 @@ class AddMenu {
             Console.WriteLine("Add comment for " + ingredient);
             string addComment = getUserChoice();
             Recipe.Add(addComment);
-        }      
+        }*/      
     }
-    }
+}

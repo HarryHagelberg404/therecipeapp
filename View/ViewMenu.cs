@@ -1,59 +1,35 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-namespace View {
 
-class ViewMenu {
-
-
- private string _userMessage;
-
-    public string UserMessage
+namespace View
+{
+    class ViewMenu
     {
-        get { return _userMessage; }
-        set
+        public string displayMenu(List<string> recipeList)
         {
-            _userMessage = value;
-        }
-    }
+            Console.Clear();
+            Console.WriteLine("Welcome to the recipe viewer!");
+            Console.WriteLine("Choose a specific recipe to get a further in depth look: \n");
+            Console.WriteLine("Press 1. To go back");
 
-         
-
-
-               public string getUserChoice()
-        {
+            int index = 1;
+            foreach(string recipe in recipeList)
+            {
+                index++;
+                Console.WriteLine("Press " + index + ". to view: " + recipe);
+            }
             return Console.ReadLine();
         }
 
-        public void viewMenu(View.CookBook v_CookBookMenu)
+        /*
+        public void showRecipe(string recipe)
         {
             Console.Clear();
-               
-            Console.WriteLine("Press 1 To view recipes");
-            Console.WriteLine("Press 2 To go back");
-            if (UserMessage != null)
-            {
-                Console.WriteLine(UserMessage);
-                Console.WriteLine("");
-                UserMessage  = null;
-            }
-            int userChoice = Int16.Parse(getUserChoice());
-            Console.WriteLine(userChoice);
-            if (userChoice == 1)
-            {
-                TempRecipes(v_CookBookMenu);
-            }
-            else if (userChoice == 2)
-            {
-                v_CookBookMenu.displayMenu();      
-            }
-            else
-            {
-                UserMessage = "Please enter the number 1 or 2.";
-                viewMenu(v_CookBookMenu);
-            }
+            Console.WriteLine("Here comes an in depth look of: " + recipe);
         }
-
+        */
+        /*
         private void addRecipe()
         {
 
@@ -64,7 +40,8 @@ class ViewMenu {
 
         }
 
-        private void TempRecipes(View.CookBook v_CookBookMenu) {
+        private void TempRecipes(View.BaseMenu v_baseMenu)
+        {
             Console.WriteLine("Gingerbread biscuit; 100, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Pancakes; 20, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
             Console.WriteLine("Meatballs; 40, pieces; [1, litre, flour; 2, dl, cream; 1, spoon, cinnamon]; *Mix everything, *Wait one day, *Make figures");
@@ -80,14 +57,14 @@ class ViewMenu {
             Console.WriteLine(userChoice);
             if (userChoice == 2)
             {
-                viewMenu(v_CookBookMenu);
+                viewMenu(v_baseMenu);
             }
             else
             {
                 UserMessage = "Please enter the number 1 or 2.";
-                TempRecipes(v_CookBookMenu);
+                TempRecipes(v_baseMenu);
             }   
-        }
+        }*/
         
     }
 }

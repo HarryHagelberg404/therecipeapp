@@ -12,8 +12,22 @@ namespace Controller
         Model.Persistence m_persistence;
 
         private string _dbFileName = "IngredientDB.txt";
-      
 
+        public List<string> retrieveRecipes()
+        {
+            List<string> recipeList = new List<string>();
+            recipeList.Add("Bacon");
+            recipeList.Add("Spaghet");
+            recipeList.Add("Hamburga");
+            return recipeList;
+        }
+
+        public string retrieveRecipe(int indexOfRecipe)
+        {
+            return "Bacon";
+        }
+      
+        /*
         public Persistence(Model.Recipe m_recipe) 
         {
             this.m_recipe = m_recipe;
@@ -67,7 +81,7 @@ namespace Controller
     // Remove ingredient
     public void removeIngredient () {
     
-    }
+    }*/
       
     }
 

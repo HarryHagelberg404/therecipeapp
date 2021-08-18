@@ -6,64 +6,40 @@ namespace Model
 {
     class Recipe
     {  
-        private string _recipeName;
-
-        private int _recipePortions;
-
-        private string _recipeIngredients;
-
-        private int _recipeIngredientsAmount;
-
-        private string _recipeIngredientsComment;
-
-        private List<string> _recipeInstructions;
-
-        private string _recipeComment;
-
-        private string _ingredientName;
-
-        private string _ingredientUnit;
-
-        private int _ingredientPrice;
+        private string _name;
+        private int _portions;
+        private List<Ingredient> _ingredients;
+        private string _comment;
+        private List<string> _instructions;
         
-        public string RecipeName {
-        get {return _recipeName;} 
-        set {_recipeName = value;}
+        public string Name
+        {
+            get { return _recipeName; } 
+            set { _recipeName = value; }
         }
 
-        public int RecipePortions {
-        get {return _recipePortions;} 
-        set {_recipePortions = value;}
+        public int Portions
+        {
+            get { return _portions; } 
+            set { _portions = value; }
         }
 
-        public string RecipeIngredient {
-        get {return _recipeIngredients;} 
-        set {_recipeIngredients = value;}
+        public List<Ingredient> Ingredient
+        {
+            get { return _ingredients; } 
+            set { _recipeIngredients.Add(value); }
         }
 
-        public int RecipeIngredientAmount {
-        get {return _recipeIngredientsAmount;} 
-        set {_recipeIngredientsAmount = value;}}
-
-        public string RecipeComment {
-        get {return _recipeComment;} 
-        set {_recipeComment = value;}
+        public string Comment
+        {
+            get { return _comment; } 
+            set {_comment = value; }
         }
 
-        public string IngredientName {
-        get {return _ingredientName;} 
-        set {_ingredientName = value;}
+        public List<string> Instructions
+        {
+            get { return _instructions; }
+            set { _instructions.Add(value); }
         }
-
-        public string IngredientUnit {
-        get {return _ingredientUnit;} 
-        set {_ingredientUnit = value;}
-        }
-
-        public int IngredientPrice {
-        get {return _ingredientPrice;} 
-        set {_ingredientPrice = value;}
-        }
-
     }
 }

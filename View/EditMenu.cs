@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 namespace View {
 
-class EditMenu {
+class EditMenu {/*
   private string _userMessage;
 
     public string UserMessage
@@ -18,7 +18,7 @@ class EditMenu {
         {
             return Console.ReadLine();
         }
-    public void editMenu (View.CookBook v_CookBookMenu, Controller.Persistence c_persistence) {
+    public void editMenu (View.BaseMenu v_baseMenu, Controller.Persistence c_persistence) {
     Console.Clear();
 
         Console.WriteLine("Press 1 To edit recipe");
@@ -42,15 +42,15 @@ class EditMenu {
                     }
                 else if (userChoice == 3)
                 {   
-                   v_CookBookMenu.displayMenu();
+                   v_baseMenu.displayMenu();
                 }
                 else
                 {
                     UserMessage = "Please enter the number 1 or 2.";
-                    editMenu(v_CookBookMenu, c_persistence);
+                    editMenu(v_baseMenu, c_persistence);
                 
                 }
             }
-        }
+        }*/
     }
 }
