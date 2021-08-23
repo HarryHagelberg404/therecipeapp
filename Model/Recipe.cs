@@ -8,9 +8,9 @@ namespace Model
     {  
         private string _name;
         private int _portions;
-        private List<Ingredient> _ingredients;
+        private List<Ingredient> _ingredients = new List<Ingredient>();
         private string _comment;
-        private List<string> _instructions;
+        private List<string> _instructions = new List<string>();
         
         public string Name
         {
@@ -24,10 +24,9 @@ namespace Model
             set { this._portions = value; }
         }
 
-        public List<Ingredient> Ingredient
+        public List<Ingredient> Ingredients
         {
-            get { return this._ingredients; } 
-            set { this._ingredients = value; }
+            get { return this._ingredients; }
         }
 
         public string Comment
@@ -39,7 +38,6 @@ namespace Model
         public List<string> Instructions
         {
             get { return this._instructions; }
-            set { this._instructions = value; }
         }
     }
 }

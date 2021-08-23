@@ -4,7 +4,60 @@ using System.Collections.Generic;
 
 namespace Model
 {
-    class Persistence {
+    class Persistence
+    {
+        Model.Recipe m_recipe;
+
+        private string _location = "./Recipes";
+        private string _directoryName;
+
+        public List<string> retrieveRecipes()
+        {
+            List<string> recipeList = new List<string>();
+
+            // Fill with all recipe names inside ./Recipes directory
+            var directories = Directory.GetDirectories(this._location);
+            foreach(string directory in directories)
+            {
+                // Current layout of directory = ./Recipe/xxx
+                // Thus need to retrive recipe name after second "/"
+                recipeList.Add(directory.Substring(directory.LastIndexOf("/") + 1));
+            }
+            return recipeList;
+        }
+
+        public Model.Recipe retrieveRecipe(int indexOfRecipe)
+        {
+            string recipeName = this.retrieveRecipes()[indexOfRecipe];
+            string[] fileArray = Directory.GetFiles(this._location + "/" + recipeName);
+            foreach(string file in fileArray)
+            {
+                Console.WriteLine(file);
+            }
+            Console.ReadLine();
+
+            // Load directory into model
+
+            // Return model
+            Model.Recipe recipe = new Model.Recipe();
+            recipe.Name = "SPAGHETTT";
+            return recipe;
+        }
+        /*
+        private string retrieveValueFromFile()
+        {
+
+        }
+
+        private string[] retrieveValuesFromFile()
+        {
+
+        }
+        */
+        public bool saveRecipe(Model.Recipe recipe)
+        {
+            return true;
+        }
     /*
     private string _dbFileIngredient = "IngredientDB.txt";
 

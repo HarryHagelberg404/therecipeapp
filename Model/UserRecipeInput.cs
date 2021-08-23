@@ -11,32 +11,16 @@ namespace Model
         public string Value
         {
             get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Bad practice but works for now :/
-        public void validate(string value, bool isNumeric)
-        {
-            if (isNumeric)
+            set
             {
                 try
                 {
-                    // Force exception if user does not enter numeric value
-                    int convertedInput = Convert.ToInt32(value);
-                    this.Value = convertedInput.ToString();
+                    this._value = value;
                 }
                 catch (ArgumentException)
                 {
-                    this.Value = null;
+                    this._value = null;
                 }
-                catch(FormatException)
-                {
-                    this.Value = null;
-                }
-            }
-            else
-            {
-                this.Value = value;
             }
         }
 

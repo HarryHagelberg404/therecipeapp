@@ -1,3 +1,0 @@
-Name:Egg, Unit:piece, Price:5 Kr
-Name:Milk, Unit:litre, Price:15 Kr
-Name:Kebab, Unit:piece, Price:10 Kr

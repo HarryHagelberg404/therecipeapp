@@ -6,31 +6,6 @@ namespace Controller
 {
     class Persistence
     {
-    
-        Model.Recipe m_recipe;
-
-        Model.Persistence m_persistence;
-
-        private string _dbFileName = "IngredientDB.txt";
-
-        public List<string> retrieveRecipes()
-        {
-            List<string> recipeList = new List<string>();
-            recipeList.Add("Bacon");
-            recipeList.Add("Spaghet");
-            recipeList.Add("Hamburga");
-            return recipeList;
-        }
-
-        public Model.Recipe retrieveRecipe(int indexOfRecipe)
-        {
-            // Creation of test recipe for now
-            // Later change to retrieve recipe of index chosen
-            Model.Recipe recipe = new Model.Recipe();
-            recipe.Name = "SPAGHETTT";
-            return recipe;
-        }
-      
         /*
         public Persistence(Model.Recipe m_recipe) 
         {
